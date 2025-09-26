@@ -1,36 +1,26 @@
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bei LENZZ – Online-Shop</title>
-<meta name="description" content="Bei LENZZ – stilvoll shoppen. Einfacher Warenkorb, Gast-Checkout, Kartenzahlung via Stripe Payment Links.">
+<meta name="description" content="Bei LENZZ – stilvoll shoppen. Warenkorb, Gast-Checkout, Kartenzahlung via Stripe Payment Links.">
 <meta name="theme-color" content="#0ea5e9">
 <style>
-/* ====== Design Tokens ====== */
-:root{
-  --bg:#0b0f14; --bg2:#0f141b; --text:#e6edf3; --muted:#9fb2c7;
-  --brand:#0ea5e9; --brand2:#22d3ee; --card:#0f1720; --border:#1f2a36;
-  --ok:#16a34a; --warn:#f59e0b; --err:#ef4444; --shadow:0 12px 30px rgba(0,0,0,.35);
-}
-@media (prefers-color-scheme: light){
-  :root{ --bg:#fff; --bg2:#f7fafc; --text:#0b1220; --muted:#516174; --card:#fff; --border:#e5e7eb; --shadow:0 12px 30px rgba(2,8,23,.06); }
-}
-*{box-sizing:border-box} html:focus-within{scroll-behavior:smooth}
+:root{--bg:#0b0f14;--bg2:#0f141b;--text:#e6edf3;--muted:#9fb2c7;--brand:#0ea5e9;--brand2:#22d3ee;--card:#0f1720;--border:#1f2a36;--ok:#16a34a;--err:#ef4444;--shadow:0 12px 30px rgba(0,0,0,.35)}
+@media (prefers-color-scheme: light){:root{--bg:#fff;--bg2:#f7fafc;--text:#0b1220;--muted:#516174;--card:#fff;--border:#e5e7eb;--shadow:0 12px 30px rgba(2,8,23,.06)}}
+*{box-sizing:border-box}html:focus-within{scroll-behavior:smooth}
 body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;color:var(--text);background:radial-gradient(1200px 600px at 80% -10%, rgba(56,189,248,.15), transparent 60%), var(--bg)}
-a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
 h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
-h1{font-size:clamp(1.8rem,3vw+1rem,2.6rem)} h2{font-size:clamp(1.4rem,2vw+1rem,2rem)} h3{font-size:1.1rem}
+h1{font-size:clamp(1.8rem,3vw+1rem,2.6rem)}h2{font-size:clamp(1.4rem,2vw+1rem,2rem)}h3{font-size:1.1rem}
 .container{max-width:1120px;margin-inline:auto;padding:0 1rem}
-.section{padding:3.5rem 0} .section.alt{background:var(--bg2)}
-.muted{color:var(--muted)} .ok{color:var(--ok)} .err{color:var(--err)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border:1px solid var(--border);border-radius:.75rem;background:var(--card);color:var(--text);cursor:pointer}
+.section{padding:3.5rem 0}.section.alt{background:var(--bg2)}
+.muted{color:var(--muted)}.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border:1px solid var(--border);border-radius:.75rem;background:var(--card);color:var(--text);cursor:pointer}
 .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:none;box-shadow:var(--shadow)}
 .btn.ghost{background:transparent}
 .badge{display:inline-block;font:700 .75rem/1 system-ui;padding:.3rem .5rem;border-radius:.5rem;background:color-mix(in oklab, var(--brand) 25%, transparent);color:var(--brand)}
-input,select,textarea{width:100%;padding:.7rem .8rem;border-radius:.6rem;border:1px solid var(--border);background:var(--card);color:var(--text)}
-label{font-weight:600}
+input,select{width:100%;padding:.7rem .8rem;border-radius:.6rem;border:1px solid var(--border);background:var(--card);color:var(--text)}
 .grid{display:grid;gap:1rem}
 
 /* Header */
@@ -45,19 +35,16 @@ label{font-weight:600}
 /* Hero */
 .hero{padding:5rem 0 3rem;background:radial-gradient(800px 400px at -10% 0%, rgba(34,211,238,.18), transparent 60%)}
 .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
-.hero p{color:var(--muted);margin:.5rem 0 1rem}
-.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;padding:0;margin:1rem 0 0;list-style:none}
-@media (max-width: 900px){ .hero-inner{grid-template-columns:1fr} .features{grid-template-columns:1fr} }
+@media (max-width: 900px){.hero-inner{grid-template-columns:1fr}}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem;list-style:none;padding:0;margin:1rem 0 0}
 
 /* Products */
 .controls{display:flex;gap:.75rem;flex-wrap:wrap;margin:1rem 0}
-.products{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media (max-width: 900px){ .products{grid-template-columns:1fr} }
+.products{grid-template-columns:repeat(3,minmax(0,1fr))}@media (max-width:900px){.products{grid-template-columns:1fr}}
 .card{background:var(--card);border:1px solid var(--border);border-radius:1rem;box-shadow:var(--shadow);overflow:hidden}
 .product{display:grid;grid-template-rows:auto auto 1fr auto;gap:.6rem}
 .product .media{aspect-ratio:4/3;background:var(--bg2);display:flex;align-items:center;justify-content:center}
-.product .body{padding:1rem}
-.product .foot{padding:1rem;display:flex;align-items:center;justify-content:space-between}
+.product .body{padding:1rem}.product .foot{padding:1rem;display:flex;align-items:center;justify-content:space-between}
 
 /* Cart Drawer */
 .drawer{position:fixed;inset:0;pointer-events:none}
@@ -73,14 +60,14 @@ label{font-weight:600}
 .cart-sum{border-top:1px solid var(--border);padding:1rem;display:grid;gap:.4rem}
 .row{display:flex;justify-content:space-between;align-items:center}
 
-/* Modal (Auth / Checkout) */
+/* Modal */
 .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.45)}
 .modal.open{display:grid}
 .modal>div{width:min(560px,92vw);background:var(--card);border:1px solid var(--border);border-radius:1rem;box-shadow:var(--shadow);padding:1rem}
 .form{display:grid;gap:.9rem;margin-top:.6rem}
 
-/* Admin Ribbon */
-.admin-ribbon{position:fixed;left:0;bottom:0;padding:.35rem .6rem;border-top-right-radius:.6rem;background:color-mix(in oklab, var(--brand) 25%, transparent);backdrop-filter:blur(4px);border:1px solid var(--border);border-left:none;border-bottom:none}
+/* Admin Ribbon (sichtbar + vorn) */
+.admin-ribbon{position:fixed;left:0;bottom:0;z-index:1000;padding:.35rem .6rem;border-top-right-radius:.6rem;background:color-mix(in oklab, var(--brand) 25%, transparent);backdrop-filter:blur(4px);border:1px solid var(--border);border-left:none;border-bottom:none}
 .admin-ribbon button{border:0;background:transparent;color:var(--text);cursor:pointer}
 </style>
 </head>
@@ -90,17 +77,20 @@ label{font-weight:600}
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="#" aria-label="Startseite">
-      <!-- ♥ Logo: Bei LENZZ -->
-      <svg viewBox="0 0 64 64" aria-hidden="true">
+      <!-- LOGO: eindeutige Gradient-ID -->
+      <svg viewBox="0 0 64 64" aria-hidden="true" role="img">
         <defs>
-          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient>
+          <linearGradient id="logoGradLENZZ" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#22d3ee"/>
+          </linearGradient>
         </defs>
-        <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#g)"></rect>
+        <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#logoGradLENZZ)"></rect>
         <path d="M18 42 L18 22 L32 22 Q42 22 42 32 Q42 42 32 42 Z M30 30 L30 34 L32 34 Q36 34 36 32 Q36 30 32 30 Z" fill="white"/>
       </svg>
       <span>Bei&nbsp;LENZZ</span>
     </a>
     <nav class="nav" aria-label="Navigation">
+      <button id="btn-admin-hdr" class="btn ghost" title="Admin öffnen">Admin</button>
       <button id="btn-login" class="btn ghost">Anmelden</button>
       <button id="btn-cart" class="btn cart-btn">Warenkorb 🛒<span id="cart-count" class="cart-count">0</span></button>
     </nav>
@@ -113,7 +103,7 @@ label{font-weight:600}
     <div>
       <span class="badge">Neu</span>
       <h1>Stil, der bleibt. Shoppe Bei LENZZ.</h1>
-      <p>Schöne Essentials zu fairen Preisen. Ohne Schnickschnack – mit Gefühl.</p>
+      <p class="muted">Schöne Essentials zu fairen Preisen. Ohne Schnickschnack – mit Gefühl.</p>
       <div style="display:flex;gap:.6rem;flex-wrap:wrap">
         <a href="#produkte" class="btn primary">Jetzt stöbern</a>
         <a href="#vorteile" class="btn ghost">Warum Bei LENZZ?</a>
@@ -141,14 +131,10 @@ label{font-weight:600}
       <p class="muted">Alle Preise inkl. MwSt. zzgl. Versand.</p>
       <div class="controls">
         <input id="q" placeholder="Suche nach Produkt/Kategorie …" aria-label="Suche">
-        <select id="cat" aria-label="Kategorie">
-          <option value="">Alle Kategorien</option>
-        </select>
+        <select id="cat" aria-label="Kategorie"><option value="">Alle Kategorien</option></select>
         <select id="sort" aria-label="Sortierung">
-          <option value="popular">Beliebtheit</option>
-          <option value="price-asc">Preis aufsteigend</option>
-          <option value="price-desc">Preis absteigend</option>
-          <option value="name">Name A–Z</option>
+          <option value="popular">Beliebtheit</option><option value="price-asc">Preis aufsteigend</option>
+          <option value="price-desc">Preis absteigend</option><option value="name">Name A–Z</option>
         </select>
       </div>
     </header>
@@ -171,10 +157,7 @@ label{font-weight:600}
 <!-- Cart Drawer -->
 <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Warenkorb">
   <div class="panel">
-    <div class="cart-head">
-      <h2>Warenkorb</h2>
-      <button id="close-cart" class="btn">✕</button>
-    </div>
+    <div class="cart-head"><h2>Warenkorb</h2><button id="close-cart" class="btn">✕</button></div>
     <div id="cart-items" class="cart-items"></div>
     <div class="cart-sum">
       <div class="row"><span>Zwischensumme</span><strong id="sum">0,00 €</strong></div>
@@ -191,8 +174,8 @@ label{font-weight:600}
     <h2 id="auth-title">Anmelden oder Konto erstellen</h2>
     <p class="muted">Du kannst auch als Gast fortfahren.</p>
     <div class="form">
-      <label>E-Mail<input id="auth-email" type="email" autocomplete="email"></label>
-      <label>Passwort<input id="auth-pass" type="password" autocomplete="current-password"></label>
+      <label>E-Mail<input id="auth-email" type="email" autocomplete="email" placeholder="du@example.com"></label>
+      <label>Passwort<input id="auth-pass" type="password" autocomplete="current-password" placeholder="••••••••"></label>
       <div style="display:flex;gap:.5rem;flex-wrap:wrap">
         <button id="login" class="btn primary">Anmelden</button>
         <button id="register" class="btn">Konto erstellen</button>
@@ -203,7 +186,7 @@ label{font-weight:600}
   </div>
 </div>
 
-<!-- Modal: Checkout (Adresse) -->
+<!-- Modal: Checkout -->
 <div id="co-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="co-title">
   <div>
     <h2 id="co-title">Lieferadresse</h2>
@@ -217,10 +200,7 @@ label{font-weight:600}
       </div>
       <label>Land
         <select id="co-country" required>
-          <option value="DE">Deutschland</option>
-          <option value="AT">Österreich</option>
-          <option value="CH">Schweiz</option>
-          <option value="">Anderes Land…</option>
+          <option value="DE">Deutschland</option><option value="AT">Österreich</option><option value="CH">Schweiz</option>
         </select>
       </label>
       <div class="row" style="gap:.5rem">
@@ -248,16 +228,16 @@ label{font-weight:600}
     </div>
 
     <div id="admin-app" class="hide">
-      <h3>Neues/zu bearbeitendes Produkt</h3>
+      <h3>Produkt anlegen/bearbeiten</h3>
       <div class="form">
-        <label>ID (eindeutig)<input id="p-id" placeholder="z.B. lenzz-hoodie"></label>
+        <label>ID<input id="p-id" placeholder="z.B. lenzz-hoodie"></label>
         <label>Name<input id="p-name" placeholder="Produktname"></label>
         <div class="grid" style="grid-template-columns:1fr 1fr;gap:.75rem">
           <label>Preis (EUR)<input id="p-price" type="number" step="0.01"></label>
           <label>Kategorie<input id="p-cat" placeholder="z.B. Bekleidung"></label>
         </div>
-        <label>Bild-URL (jpg/png/svg)<input id="p-img" placeholder="https://..."></label>
-        <label>Badges (kommasepariert)<input id="p-badges" placeholder="Neu, Bestseller"></label>
+        <label>Bild-URL<input id="p-img" placeholder="https://…"></label>
+        <label>Badges (kommagetrennt)<input id="p-badges" placeholder="Neu, Bestseller"></label>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap">
           <button id="save-product" class="btn primary">Speichern/Aktualisieren</button>
           <button id="delete-product" class="btn">Löschen</button>
@@ -276,307 +256,159 @@ label{font-weight:600}
 </div>
 
 <script>
-/* ===================== KONFIGURATION ===================== */
-/* Zahlungsmodus:
-   - "links" = je Produkt ein Stripe Payment Link (kein Backend nötig)
-   - "none"  = Demo (zeigt Hinweis)
-*/
+/* ============ KONFIG ============ */
 const PAYMENT_MODE = "links";
-
-/* Trage hier deine Stripe Payment Links pro Produkt-ID ein.
-   Beispiel: 'lenzz-hoodie': 'https://buy.stripe.com/your_link_for_hoodie'
-   👉 Zum Testen kannst du die Platzhalter erstmal lassen; dann erscheint ein Dialog.
-*/
 const PRODUCT_PAYMENT_LINKS = {
-  'lenzz-hoodie': 'https://example.com/stripe-link-hoodie',
-  'lenzz-shirt':  'https://example.com/stripe-link-shirt',
-  // weitere IDs hier ergänzen…
+  'lenzz-hoodie':'https://example.com/stripe-link-hoodie',
+  'lenzz-shirt':'https://example.com/stripe-link-shirt'
 };
-
-/* Admin Zugangsdaten (im Produkt-Browser nur lokal wirksam) */
 const ADMIN_EMAIL = 'admin@lenzz.shop';
 const ADMIN_PASS  = 'LENZZadmin2025';
 
-/* ======= Demo-Produkte (kannst du im Admin pflegen oder hier) ======= */
 const DEFAULT_PRODUCTS = [
   {id:'lenzz-hoodie', name:'LENZZ Hoodie', price:59.90, category:'Bekleidung', image:'https://via.placeholder.com/640x480?text=LENZZ+Hoodie', badges:['Bestseller']},
-  {id:'lenzz-shirt', name:'LENZZ T-Shirt', price:24.90, category:'Bekleidung', image:'https://via.placeholder.com/640x480?text=LENZZ+T-Shirt', badges:['Neu']},
-  {id:'lenzz-cap', name:'LENZZ Cap', price:19.90, category:'Accessoires', image:'https://via.placeholder.com/640x480?text=LENZZ+Cap', badges:[]},
-  {id:'lenzz-mug', name:'LENZZ Becher', price:14.50, category:'Home', image:'https://via.placeholder.com/640x480?text=LENZZ+Becher', badges:[]}
+  {id:'lenzz-shirt',  name:'LENZZ T-Shirt', price:24.90, category:'Bekleidung', image:'https://via.placeholder.com/640x480?text=LENZZ+T-Shirt',  badges:['Neu']},
+  {id:'lenzz-cap',    name:'LENZZ Cap',    price:19.90, category:'Accessoires', image:'https://via.placeholder.com/640x480?text=LENZZ+Cap',    badges:[]},
+  {id:'lenzz-mug',    name:'LENZZ Becher', price:14.50, category:'Home',        image:'https://via.placeholder.com/640x480?text=LENZZ+Becher', badges:[]}
 ];
 
-/* ===================== UTILITIES ===================== */
+/* ============ UTIL & STATE ============ */
 const € = n => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
 const qs = (s,el=document)=>el.querySelector(s);
-const qsa = (s,el=document)=>[...el.querySelectorAll(s)];
-const store = {
-  get(k, d){ try{return JSON.parse(localStorage.getItem(k)) ?? d;}catch{ return d; } },
-  set(k, v){ localStorage.setItem(k, JSON.stringify(v)); }
-};
+const store = { get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}}, set(k,v){localStorage.setItem(k,JSON.stringify(v))} };
 
-/* ===================== STATE ===================== */
 const STATE = {
   products: store.get('lenzz_products', DEFAULT_PRODUCTS),
-  cart: store.get('lenzz_cart', []),   // [{id, qty}]
-  user:  store.get('lenzz_user', null) // {email, name?, address?}
+  cart: store.get('lenzz_cart', []),
+  user: store.get('lenzz_user', null)
 };
-function save(){ store.set('lenzz_products', STATE.products); store.set('lenzz_cart', STATE.cart); store.set('lenzz_user', STATE.user); }
+function save(){ store.set('lenzz_products',STATE.products); store.set('lenzz_cart',STATE.cart); store.set('lenzz_user',STATE.user); }
 
-/* ===================== RENDER: PRODUCTS ===================== */
-const grid = qs('#grid'), catSel = qs('#cat'), sortSel = qs('#sort'), qInput = qs('#q');
+/* ============ PRODUCTS UI ============ */
+const grid=qs('#grid'), catSel=qs('#cat'), sortSel=qs('#sort'), qInput=qs('#q');
 function rebuildCategories(){
-  const cats = [...new Set(STATE.products.map(p=>p.category))].sort();
-  catSel.innerHTML = '<option value="">Alle Kategorien</option>' + cats.map(c=>`<option>${c}</option>`).join('');
+  const cats=[...new Set(STATE.products.map(p=>p.category))].sort();
+  catSel.innerHTML='<option value="">Alle Kategorien</option>'+cats.map(c=>`<option>${c}</option>`).join('');
 }
 function renderProducts(list){
-  grid.innerHTML = '';
-  list.forEach(p=>{
-    const card = document.createElement('article');
-    card.className = 'card product';
-    card.innerHTML = `
+  grid.innerHTML=''; list.forEach(p=>{
+    const card=document.createElement('article'); card.className='card product';
+    card.innerHTML=`
       <div class="media"><img src="${p.image}" alt="${p.name}" loading="lazy"></div>
-      <div class="body">
-        <div>${(p.badges||[]).map(b=>`<span class="badge">${b}</span>`).join('')}</div>
-        <h3>${p.name}</h3>
-        <div class="muted">${p.category}</div>
-      </div>
-      <div class="foot">
-        <strong>${€(p.price)}</strong>
-        <button class="btn primary" data-add="${p.id}">In den Warenkorb</button>
-      </div>
-    `;
+      <div class="body"><div>${(p.badges||[]).map(b=>`<span class="badge">${b}</span>`).join('')}</div>
+        <h3>${p.name}</h3><div class="muted">${p.category}</div></div>
+      <div class="foot"><strong>${€(p.price)}</strong><button class="btn primary" data-add="${p.id}">In den Warenkorb</button></div>`;
     grid.appendChild(card);
   });
 }
 function applyFilters(){
-  const term = (qInput.value||'').toLowerCase().trim();
-  const cat = catSel.value;
-  let list = STATE.products.filter(p => (!cat || p.category===cat) && (!term || p.name.toLowerCase().includes(term) || p.category.toLowerCase().includes(term)));
-  switch (sortSel.value){
-    case 'price-asc': list.sort((a,b)=>a.price-b.price); break;
-    case 'price-desc': list.sort((a,b)=>b.price-a.price); break;
-    case 'name': list.sort((a,b)=>a.name.localeCompare(b.name)); break;
-    default: break;
-  }
+  const t=(qInput.value||'').toLowerCase().trim(); const c=catSel.value;
+  let list=STATE.products.filter(p=>(!c||p.category===c)&&(!t||p.name.toLowerCase().includes(t)||p.category.toLowerCase().includes(t)));
+  switch(sortSel.value){case'price-asc':list.sort((a,b)=>a.price-b.price);break;case'price-desc':list.sort((a,b)=>b.price-a.price);break;case'name':list.sort((a,b)=>a.name.localeCompare(b.name));break;}
   renderProducts(list);
 }
-[qInput,catSel,sortSel].forEach(el=> el.addEventListener('input', applyFilters));
+[qInput,catSel,sortSel].forEach(el=>el.addEventListener('input',applyFilters));
+grid.addEventListener('click',e=>{const b=e.target.closest('[data-add]'); if(b) addToCart(b.dataset.add,1);});
 
-/* ===================== CART ===================== */
-const cartCount = qs('#cart-count'), drawer = qs('#drawer'), cartEl = qs('#cart-items'), sumEl = qs('#sum');
+/* ============ CART ============ */
+const drawer=qs('#drawer'), cartEl=qs('#cart-items'), sumEl=qs('#sum'), cartCount=qs('#cart-count');
+function openCart(){drawer.classList.add('open');drawer.setAttribute('aria-hidden','false')}
+function closeCart(){drawer.classList.remove('open');drawer.setAttribute('aria-hidden','true')}
+qs('#btn-cart').addEventListener('click',openCart); qs('#close-cart').addEventListener('click',closeCart); drawer.querySelector('.backdrop').addEventListener('click',closeCart);
+
 function updateCartUI(){
-  cartEl.innerHTML = '';
-  let total = 0; let count = 0;
-  STATE.cart.forEach(it=>{
-    const p = STATE.products.find(x=>x.id===it.id); if(!p) return;
-    const line = p.price * it.qty; total += line; count += it.qty;
-    const row = document.createElement('div');
-    row.className = 'cart-item';
-    row.innerHTML = `
-      <img src="${p.image}" alt="${p.name}">
+  cartEl.innerHTML=''; let total=0, count=0;
+  STATE.cart.forEach(it=>{const p=STATE.products.find(x=>x.id===it.id); if(!p) return;
+    const line=p.price*it.qty; total+=line; count+=it.qty;
+    const row=document.createElement('div'); row.className='cart-item';
+    row.innerHTML=`<img src="${p.image}" alt="${p.name}">
       <div><strong>${p.name}</strong><div class="muted">${it.qty} × ${€(p.price)}</div></div>
-      <div>
-        <button class="btn" data-dec="${p.id}" title="−">−</button>
-        <button class="btn" data-inc="${p.id}" title="+">+</button>
-        <button class="btn" data-del="${p.id}" title="Entfernen">🗑️</button>
-      </div>
-    `;
+      <div><button class="btn" data-dec="${p.id}">−</button><button class="btn" data-inc="${p.id}">+</button><button class="btn" data-del="${p.id}">🗑️</button></div>`;
     cartEl.appendChild(row);
   });
-  cartCount.textContent = count;
-  sumEl.textContent = €(total);
-  save();
+  cartCount.textContent=count; sumEl.textContent=€(total); save();
 }
-function addToCart(id, qty=1){
-  const item = STATE.cart.find(i=>i.id===id);
-  if(item) item.qty += qty; else STATE.cart.push({id, qty});
-  updateCartUI(); openCart();
-}
-function setQty(id, qty){
-  const it = STATE.cart.find(i=>i.id===id);
-  if(!it) return;
-  it.qty = Math.max(0, qty|0);
-  if(it.qty===0) STATE.cart = STATE.cart.filter(i=>i!==it);
-  updateCartUI();
-}
-function openCart(){ drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false'); }
-function closeCart(){ drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); }
-qs('#btn-cart').addEventListener('click', openCart);
-qs('#close-cart').addEventListener('click', closeCart);
-drawer.querySelector('.backdrop').addEventListener('click', closeCart);
-grid.addEventListener('click', (e)=>{
-  const btn = e.target.closest('[data-add]'); if(!btn) return;
-  addToCart(btn.dataset.add, 1);
+cartEl.addEventListener('click',e=>{
+  const d=e.target.closest('[data-dec]'), i=e.target.closest('[data-inc]'), del=e.target.closest('[data-del]');
+  if(d){setQty(d.dataset.dec,(STATE.cart.find(x=>x.id===d.dataset.dec)?.qty||1)-1)}
+  if(i){setQty(i.dataset.inc,(STATE.cart.find(x=>x.id===i.dataset.inc)?.qty||0)+1)}
+  if(del){setQty(del.dataset.del,0)}
 });
-cartEl.addEventListener('click', (e)=>{
-  const d = e.target.closest('[data-dec]'); const i = e.target.closest('[data-inc]'); const del = e.target.closest('[data-del]');
-  if(d) setQty(d.dataset.dec, (STATE.cart.find(x=>x.id===d.dataset.dec)?.qty||1)-1);
-  if(i) setQty(i.dataset.inc, (STATE.cart.find(x=>x.id===i.dataset.inc)?.qty||0)+1);
-  if(del) setQty(del.dataset.del, 0);
-});
+function addToCart(id,qty=1){const it=STATE.cart.find(i=>i.id===id); if(it) it.qty+=qty; else STATE.cart.push({id,qty}); updateCartUI(); openCart();}
+function setQty(id,qty){const it=STATE.cart.find(i=>i.id===id); if(!it)return; it.qty=Math.max(0,qty|0); if(it.qty===0) STATE.cart=STATE.cart.filter(x=>x!==it); updateCartUI();}
 
-/* ===================== AUTH (optional) ===================== */
-const authModal = qs('#auth-modal'), authEmail = qs('#auth-email'), authPass = qs('#auth-pass'), authMsg = qs('#auth-msg');
-function showAuth(){ authModal.classList.add('open'); }
-function hideAuth(){ authModal.classList.remove('open'); }
-qs('#btn-login').addEventListener('click', showAuth);
-authModal.addEventListener('click', (e)=>{ if(e.target===authModal) hideAuth(); });
+/* ============ AUTH (Demo) ============ */
+const authModal=qs('#auth-modal'), authEmail=qs('#auth-email'), authPass=qs('#auth-pass'), authMsg=qs('#auth-msg');
+function showAuth(){authModal.classList.add('open')} function hideAuth(){authModal.classList.remove('open')}
+qs('#btn-login').addEventListener('click',showAuth); authModal.addEventListener('click',e=>{if(e.target===authModal)hideAuth()});
+
 function loginOrRegister(mode){
-  authMsg.textContent = '';
-  const email = (authEmail.value||'').trim().toLowerCase();
-  const pass = authPass.value||'';
-  if(!email || !pass){ authMsg.textContent='Bitte E-Mail & Passwort eingeben.'; return; }
-  // Clientseitige Pseudo-Auth (Demo); NICHT für echte Sicherheit.
-  let users = store.get('lenzz_users', {});
-  if(mode==='register'){
-    if(users[email]){ authMsg.textContent='E-Mail existiert bereits.'; return; }
-    users[email] = { email, pass };
-    store.set('lenzz_users', users);
-  }else{
-    if(!users[email] || users[email].pass !== pass){ authMsg.textContent='Ungültige Zugangsdaten.'; return; }
-  }
-  STATE.user = { email };
-  save();
-  hideAuth();
-  alert(`Willkommen, ${email}!`);
+  authMsg.textContent=''; const email=(authEmail.value||'').trim().toLowerCase(); const pass=(authPass.value||'').trim();
+  if(!email||!pass){authMsg.textContent='Bitte E-Mail & Passwort eingeben.';return}
+  let users=store.get('lenzz_users',{});
+  if(mode==='register'){ if(users[email]){authMsg.textContent='E-Mail existiert bereits.';return} users[email]={email,pass}; store.set('lenzz_users',users); }
+  else{ if(!users[email]||users[email].pass!==pass){authMsg.textContent='Ungültige Zugangsdaten.';return} }
+  STATE.user={email}; save(); hideAuth(); alert(`Willkommen, ${email}!`);
 }
-qs('#login').addEventListener('click', ()=>loginOrRegister('login'));
-qs('#register').addEventListener('click', ()=>loginOrRegister('register'));
-qs('#guest').addEventListener('click', ()=>{ STATE.user=null; save(); hideAuth(); });
+qs('#login').addEventListener('click',()=>loginOrRegister('login'));
+qs('#register').addEventListener('click',()=>loginOrRegister('register'));
+qs('#guest').addEventListener('click',()=>{STATE.user=null;save();hideAuth()});
 
-/* ===================== CHECKOUT ===================== */
-const coModal = qs('#co-modal'), coMsg = qs('#co-msg');
-function showCheckoutForm(){
-  coMsg.textContent = '';
-  const emailSuggest = STATE.user?.email || '';
-  qs('#co-email').value = emailSuggest;
-  coModal.classList.add('open');
-}
-function hideCheckoutForm(){ coModal.classList.remove('open'); }
-qs('#co-cancel').addEventListener('click', hideCheckoutForm);
-qs('#to-checkout').addEventListener('click', ()=>{
-  if(STATE.cart.length===0){ alert('Dein Warenkorb ist leer.'); return; }
-  // Wenn Nutzer nicht eingeloggt: anbieten, als Gast weiterzugehen oder anzumelden
-  if(!STATE.user){ showAuth(); authMsg.textContent='Tipp: Du kannst auch als Gast fortfahren.'; }
-  else { showCheckoutForm(); }
-});
-// Wenn Auth als Gast beendet wurde, kann Nutzer trotzdem zur Adresse
-qs('#guest').addEventListener('click', ()=>{ hideAuth(); showCheckoutForm(); });
+/* ============ CHECKOUT ============ */
+const coModal=qs('#co-modal'), coMsg=qs('#co-msg');
+function showCheckoutForm(){coMsg.textContent=''; qs('#co-email').value=STATE.user?.email||''; coModal.classList.add('open')}
+function hideCheckoutForm(){coModal.classList.remove('open')}
+qs('#co-cancel').addEventListener('click',hideCheckoutForm);
+qs('#to-checkout').addEventListener('click',()=>{ if(STATE.cart.length===0){alert('Dein Warenkorb ist leer.');return} if(!STATE.user){showAuth();authMsg.textContent='Tipp: Du kannst auch als Gast fortfahren.'} else{showCheckoutForm()} });
+qs('#guest').addEventListener('click',()=>{hideAuth();showCheckoutForm();});
 
-qs('#co-pay').addEventListener('click', ()=>{
-  // Validierung
-  const name = qs('#co-name').value.trim();
-  const email= qs('#co-email').value.trim();
-  const street=qs('#co-street').value.trim();
-  const zip  = qs('#co-zip').value.trim();
-  const city = qs('#co-city').value.trim();
-  const country = qs('#co-country').value;
-  if(!name || !email || !street || !zip || !city || !country){ coMsg.textContent='Bitte alle Felder ausfüllen.'; return; }
-
-  // Daten sichern (nur lokal)
-  STATE.user = { ...(STATE.user||{}), name, email, street, zip, city, country };
-  save();
-
-  // Zahlung starten
+qs('#co-pay').addEventListener('click',()=>{
+  const name=qs('#co-name').value.trim(), email=qs('#co-email').value.trim(), street=qs('#co-street').value.trim(), zip=qs('#co-zip').value.trim(), city=qs('#co-city').value.trim(), country=qs('#co-country').value;
+  if(!name||!email||!street||!zip||!city||!country){coMsg.textContent='Bitte alle Felder ausfüllen.';return}
+  STATE.user={...(STATE.user||{}),name,email,street,zip,city,country}; save();
   if(PAYMENT_MODE==='links'){
-    // Vereinfachung: Wenn nur EIN Produkt im Warenkorb und Link vorhanden → direkt dorthin weiterleiten
     if(STATE.cart.length===1){
-      const only = STATE.cart[0];
-      const link = PRODUCT_PAYMENT_LINKS[only.id];
-      if(link && link.startsWith('http')) { window.location.href = link; return; }
+      const only=STATE.cart[0], link=PRODUCT_PAYMENT_LINKS[only.id];
+      if(link&&link.startsWith('http')){window.location.href=link;return}
     }
-    // Mehrere Positionen oder fehlender Link → Fallback: Liste darstellen & Links zeigen
-    const missing = STATE.cart.filter(it => !PRODUCT_PAYMENT_LINKS[it.id]);
-    if(missing.length){ alert('Für einige Produkte ist noch kein Zahlungslink konfiguriert. Bitte im Code in PRODUCT_PAYMENT_LINKS ergänzen.'); }
-    let msg = 'Kauf abschließen:\n';
-    STATE.cart.forEach(it=>{
-      const p = STATE.products.find(x=>x.id===it.id); 
-      const link = PRODUCT_PAYMENT_LINKS[it.id] || '(Link fehlt)';
-      msg += `- ${p?.name||it.id} × ${it.qty}: ${link}\n`;
-    });
-    alert(msg);
-    hideCheckoutForm();
-    return;
-  }else{
-    alert('Demo-Modus: Zahlung nicht konfiguriert. Setze PAYMENT_MODE="links" und hinterlege Stripe Payment Links.');
-  }
+    const missing=STATE.cart.filter(it=>!PRODUCT_PAYMENT_LINKS[it.id]); if(missing.length){alert('Für einige Produkte fehlt noch ein Zahlungslink (PRODUCT_PAYMENT_LINKS im Code).')}
+    let msg='Kauf abschließen:\n'; STATE.cart.forEach(it=>{const p=STATE.products.find(x=>x.id===it.id); const link=PRODUCT_PAYMENT_LINKS[it.id]||'(Link fehlt)'; msg+=`- ${p?.name||it.id} × ${it.qty}: ${link}\n`}); alert(msg); hideCheckoutForm(); return;
+  } else { alert('Demo: Setze PAYMENT_MODE="links" und trage Stripe Payment Links ein.'); }
 });
 
-/* ===================== ADMIN ===================== */
-const admModal = qs('#admin-modal'), admMsg=qs('#adm-msg');
-qs('#admin-open').addEventListener('click', ()=> admModal.classList.add('open'));
-admModal.addEventListener('click', (e)=>{ if(e.target===admModal) admModal.classList.remove('open'); });
+/* ============ ADMIN ============ */
+const admModal=qs('#admin-modal'), admMsg=qs('#adm-msg');
+function openAdmin(){admModal.classList.add('open')} function closeAdmin(){admModal.classList.remove('open')}
+qs('#admin-open').addEventListener('click',openAdmin); qs('#btn-admin-hdr').addEventListener('click',openAdmin);
+admModal.addEventListener('click',e=>{if(e.target===admModal)closeAdmin()});
 
-qs('#adm-login').addEventListener('click', ()=>{
+qs('#adm-login').addEventListener('click',()=>{
   admMsg.textContent='';
-  const em = qs('#adm-email').value.trim().toLowerCase();
-  const pw = qs('#adm-pass').value;
-  if(em === ADMIN_EMAIL && pw === ADMIN_PASS){
+  const em=(qs('#adm-email').value||'').trim().toLowerCase();
+  const pw=(qs('#adm-pass').value||'').trim();
+  if(em===ADMIN_EMAIL && pw===ADMIN_PASS){
     qs('#admin-auth').style.display='none';
     qs('#admin-app').classList.remove('hide');
-    // Prefill IDs für Bearbeitung
     if(STATE.products[0]) fillProductForm(STATE.products[0]);
-  }else{
-    admMsg.textContent='Zugangsdaten ungültig.';
-  }
+  } else { admMsg.textContent='Zugangsdaten ungültig. Bitte exakt eingeben.'; }
 });
-qs('#close-admin').addEventListener('click', ()=> admModal.classList.remove('open'));
+qs('#close-admin').addEventListener('click',closeAdmin);
 
-function fillProductForm(p){
-  qs('#p-id').value = p?.id||'';
-  qs('#p-name').value = p?.name||'';
-  qs('#p-price').value = p?.price||'';
-  qs('#p-cat').value = p?.category||'';
-  qs('#p-img').value = p?.image||'';
-  qs('#p-badges').value = (p?.badges||[]).join(', ');
-}
-qs('#save-product').addEventListener('click', ()=>{
-  const p = {
-    id: qs('#p-id').value.trim(),
-    name: qs('#p-name').value.trim(),
-    price: parseFloat(qs('#p-price').value||'0'),
-    category: qs('#p-cat').value.trim(),
-    image: qs('#p-img').value.trim(),
-    badges: (qs('#p-badges').value||'').split(',').map(s=>s.trim()).filter(Boolean)
-  };
-  if(!p.id || !p.name || !p.price || !p.category || !p.image){ alert('Bitte alle Produktfelder ausfüllen.'); return; }
-  const i = STATE.products.findIndex(x=>x.id===p.id);
-  if(i>=0) STATE.products[i] = p; else STATE.products.push(p);
-  save(); rebuildCategories(); applyFilters();
-  alert('Produkt gespeichert.');
+function fillProductForm(p){qs('#p-id').value=p?.id||'';qs('#p-name').value=p?.name||'';qs('#p-price').value=p?.price||'';qs('#p-cat').value=p?.category||'';qs('#p-img').value=p?.image||'';qs('#p-badges').value=(p?.badges||[]).join(', ')}
+qs('#save-product').addEventListener('click',()=>{
+  const p={id:qs('#p-id').value.trim(), name:qs('#p-name').value.trim(), price:parseFloat(qs('#p-price').value||'0'), category:qs('#p-cat').value.trim(), image:qs('#p-img').value.trim(), badges:(qs('#p-badges').value||'').split(',').map(s=>s.trim()).filter(Boolean)};
+  if(!p.id||!p.name||!p.price||!p.category||!p.image){alert('Bitte alle Produktfelder ausfüllen.');return}
+  const i=STATE.products.findIndex(x=>x.id===p.id); if(i>=0) STATE.products[i]=p; else STATE.products.push(p);
+  save(); rebuildCategories(); applyFilters(); alert('Produkt gespeichert.');
 });
-qs('#delete-product').addEventListener('click', ()=>{
-  const id = qs('#p-id').value.trim();
-  if(!id) return;
-  STATE.products = STATE.products.filter(p=>p.id!==id);
-  STATE.cart = STATE.cart.filter(i=>i.id!==id);
-  save(); rebuildCategories(); applyFilters(); updateCartUI();
-  alert('Produkt gelöscht.');
-});
-qs('#export-json').addEventListener('click', ()=>{
-  const blob = new Blob([JSON.stringify(STATE.products,null,2)], {type:'application/json'});
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'lenzz-products.json'; a.click();
-});
-qs('#import-json').addEventListener('click', ()=> qs('#import-file').click());
-qs('#import-file').addEventListener('change', async (e)=>{
-  const file = e.target.files[0]; if(!file) return;
-  const txt = await file.text();
-  try{
-    const arr = JSON.parse(txt);
-    if(!Array.isArray(arr)) throw new Error('Format');
-    STATE.products = arr; save(); rebuildCategories(); applyFilters();
-    alert('Produkte importiert.');
-  }catch{ alert('Ungültige JSON-Datei.'); }
-});
+qs('#delete-product').addEventListener('click',()=>{const id=qs('#p-id').value.trim(); if(!id) return; STATE.products=STATE.products.filter(p=>p.id!==id); STATE.cart=STATE.cart.filter(i=>i.id!==id); save(); rebuildCategories(); applyFilters(); updateCartUI(); alert('Produkt gelöscht.')});
+qs('#export-json').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(STATE.products,null,2)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='lenzz-products.json'; a.click();});
+qs('#import-json').addEventListener('click',()=>qs('#import-file').click());
+qs('#import-file').addEventListener('change',async e=>{const f=e.target.files[0]; if(!f) return; const txt=await f.text(); try{const arr=JSON.parse(txt); if(!Array.isArray(arr)) throw 0; STATE.products=arr; save(); rebuildCategories(); applyFilters(); alert('Produkte importiert.')}catch{alert('Ungültige JSON-Datei.')}});
 
-/* ===================== INIT ===================== */
-function init(){
-  rebuildCategories();
-  applyFilters();
-  updateCartUI();
-}
+/* ============ INIT ============ */
+function init(){ rebuildCategories(); applyFilters(); updateCartUI(); }
 init();
 </script>
-
 </body>
 </html>
